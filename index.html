@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Century Gothic', 'Open Sans', Arial, sans-serif;
       background: linear-gradient(to bottom, #fff, #fdf6f2);
       color: #333;
     }
+
     header {
       background-image: url('portada.jpg');
       background-size: cover;
@@ -25,26 +27,31 @@
       align-items: center;
       text-align: center;
     }
+
     header h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 4em;
       margin: 0;
     }
+
     section.content {
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
     }
+
     h2 {
       font-family: 'Great Vibes', cursive;
       font-size: 2.5em;
       text-align: center;
       color: #af3e2b;
     }
+
     .itinerary td {
       padding: 10px;
       border-bottom: 1px solid #ccc;
     }
+
     .countdown {
       display: flex;
       justify-content: center;
@@ -52,17 +59,20 @@
       font-size: 2em;
       margin-top: 20px;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
     }
+
     .gallery img {
       width: 180px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
+
     .gift-button {
       display: block;
       width: fit-content;
@@ -75,26 +85,26 @@
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>¡Nos casamos!</h1>
-  <p>Hugo & Yasmin</p>
-  <p>9 de mayo del 2026</p>
-  <div class="countdown" id="countdown">
-    <div><span id="days">--</span><br>días</div>
-    <div><span id="hours">--</span><br>horas</div>
-    <div><span id="minutes">--</span><br>min</div>
-    <div><span id="seconds">--</span><br>seg</div>
-  </div>
-</header>
+  <header>
+    <h1>¡Nos casamos!</h1>
+    <p>Hugo & Yasmin</p>
+    <p>9 de mayo del 2026</p>
+    <div class="countdown" id="countdown">
+      <div><span id="days">--</span><br>días</div>
+      <div><span id="hours">--</span><br>horas</div>
+      <div><span id="minutes">--</span><br>min</div>
+      <div><span id="seconds">--</span><br>seg</div>
+    </div>
+  </header>
 
-<!-- Separador ancho completo con fade -->
-<section style="padding: 0; margin: 0;">
-  <div style="position: relative; width: 100%;">
-    <img src="nosotros.jpeg" alt="Nuestra foto"
-      style="width: 100%; height: auto; display: block;">
-    <div style="
+  <!-- Separador ancho completo con fade -->
+  <section style="padding: 0; margin: 0;">
+    <div style="position: relative; width: 100%;">
+      <img src="nosotros.jpeg" alt="Nuestra foto" style="width: 100%; height: auto; display: block;">
+      <div style="
       position: absolute;
       bottom: 0;
       left: 0;
@@ -102,60 +112,65 @@
       height: 30%;
       background: linear-gradient(to top, rgba(253,246,242,1), rgba(253,246,242,0));
     "></div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section class="content">
-  <h2>Nuestra Historia</h2>
-  <p>Nos conocimos como por el destino un 7 de abril del 2024, y fuimos conectando en muchas cosas y el amor fue surgiendo hasta que el día de hoy nos estamos casando.</p>
-</section>
+  <section class="content">
+    <h2>Nuestra Historia</h2>
+    <p>Nos conocimos como por el destino un 7 de abril del 2024, y fuimos conectando en muchas cosas y el amor fue
+      surgiendo hasta que el día de hoy nos estamos casando.</p>
+  </section>
 
-<section class="content">
-  <h2>Itinerario</h2>
-  <table class="itinerary">
-    <tr>
-      <td>⛪ <strong>Ceremonia:</strong></td>
-      <td>15:00 - 16:00 hrs en Parroquia Nuestra Señora de La Merced, zona 1</td>
-    </tr>
-    <tr>
-      <td>🍷 <strong>Recepción:</strong></td>
-      <td>18:00 - 23:00 hrs en Museo de La Merced, zona 1</td>
-    </tr>
-  </table>
-</section>
+  <section class="content">
+    <h2>Itinerario</h2>
+    <table class="itinerary">
+      <tr>
+        <td>⛪ <strong>Ceremonia:</strong></td>
+        <td>15:00 - 16:00 hrs en Parroquia Nuestra Señora de La Merced, zona 1</td>
+      </tr>
+      <tr>
+        <td>🍷 <strong>Recepción:</strong></td>
+        <td>18:00 - 23:00 hrs en Museo de La Merced, zona 1</td>
+      </tr>
+    </table>
+  </section>
 
-<section class="content">
-  <h2>Confirmación de Asistencia (RSVP)</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwZKvLu2sNJQluOVeaXTKjos3Oz9P1ZgKFtd3HY7-fo1hqIw/viewform?embedded=true" width="100%" height="740" frameborder="0">Cargando…</iframe>
-</section>
+  <section class="content">
+    <h2>Confirmación de Asistencia (RSVP)</h2>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdwZKvLu2sNJQluOVeaXTKjos3Oz9P1ZgKFtd3HY7-fo1hqIw/viewform?embedded=true"
+      width="100%" height="740" frameborder="0">Cargando…</iframe>
+  </section>
 
-<section class="content">
-  <h2>Lista de regalos</h2>
-  <p style="text-align: center;">Queremos compartir esta etapa contigo. Si deseas hacernos un obsequio especial, visita nuestra lista de deseos.</p>
-  <a href="#" class="gift-button" target="_blank">Ver lista de regalos</a>
-</section>
+  <section class="content">
+    <h2>Lista de regalos</h2>
+    <p style="text-align: center;">Queremos compartir esta etapa contigo. Si deseas hacernos un obsequio especial,
+      visita nuestra lista de deseos.</p>
+    <a href="#" class="gift-button" target="_blank">Ver lista de regalos</a>
+  </section>
 
-<section class="content">
-  <h2>Galería de fotos</h2>
-  <div class="gallery">
-    <img src="foto1.jpeg" alt="Foto 1">
-    <img src="foto2.jpeg" alt="Foto 2">
-    <img src="foto3.jpeg" alt="Foto 3">
-    <img src="foto4.jpeg" alt="Foto 4">
-  </div>
-</section>
+  <section class="content">
+    <h2>Galería de fotos</h2>
+    <div class="gallery">
+      <img src="foto1.jpeg" alt="Foto 1">
+      <img src="foto2.jpeg" alt="Foto 2">
+      <img src="foto3.jpeg" alt="Foto 3">
+      <img src="foto4.jpeg" alt="Foto 4">
+    </div>
+  </section>
 
-<script>
-const targetDate = new Date("2026-05-09T15:00:00").getTime();
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-  document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-}, 1000);
-</script>
+  <script>
+    const targetDate = new Date("2026-05-09T15:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+  </script>
 
 </body>
+
 </html>
