@@ -42,20 +42,37 @@
       text-align: center;
       color: #af3e2b;
     }
-    .itinerary, .itinerary td {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-      font-size: 1.1em;
-    }
     .itinerary td {
       padding: 10px;
       border-bottom: 1px solid #ccc;
     }
-    iframe {
-      width: 100%;
-      border: none;
-      height: 740px;
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .gallery img {
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .gift-button {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #213547;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -65,6 +82,12 @@
   <h1>¡Nos casamos!</h1>
   <p>Hugo & Yasmin</p>
   <p>9 de mayo del 2026</p>
+  <div class="countdown" id="countdown">
+    <div><span id="days">--</span><br>días</div>
+    <div><span id="hours">--</span><br>horas</div>
+    <div><span id="minutes">--</span><br>min</div>
+    <div><span id="seconds">--</span><br>seg</div>
+  </div>
 </header>
 
 <section>
@@ -82,8 +105,36 @@
 
 <section>
   <h2>Confirmación de Asistencia (RSVP)</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwZKvLu2sNJQluOVeaXTKjos3Oz9P1ZgKFtd3HY7-fo1hqIw/viewform?embedded=true" allowfullscreen>Cargando…</iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwZKvLu2sNJQluOVeaXTKjos3Oz9P1ZgKFtd3HY7-fo1hqIw/viewform?embedded=true" width="100%" height="740" frameborder="0">Cargando…</iframe>
 </section>
+
+<section>
+  <h2>Lista de regalos</h2>
+  <p style="text-align: center;">Queremos compartir esta etapa contigo. Si deseas hacernos un obsequio especial, visita nuestra lista de deseos.</p>
+  <a href="#" class="gift-button" target="_blank">Ver lista de regalos</a>
+</section>
+
+<section>
+  <h2>Galería de fotos</h2>
+  <div class="gallery">
+    <img src="foto1.jpeg" alt="Foto 1">
+    <img src="foto2.jpeg" alt="Foto 2">
+    <img src="foto3.jpeg" alt="Foto 3">
+    <img src="foto4.jpeg" alt="Foto 4">
+  </div>
+</section>
+
+<script>
+const targetDate = new Date("2026-05-09T15:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+  document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+}, 1000);
+</script>
 
 </body>
 </html>
