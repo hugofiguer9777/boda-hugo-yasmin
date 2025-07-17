@@ -2,10 +2,10 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¡Nos casamos! - Hugo & Yasmin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     @font-face {
       font-family: 'Century Gothic';
@@ -57,6 +57,13 @@
     .itinerary td {
       padding: 10px;
       border-bottom: 1px solid #ccc;
+      vertical-align: top;
+    }
+
+    .itinerary img {
+      width: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
     }
 
     .countdown {
@@ -113,14 +120,8 @@
   <section style="padding: 0; margin: 0;">
     <div style="position: relative; width: 100%;">
       <img src="nosotros.jpeg" alt="Nuestra foto" style="width: 100%; height: auto; display: block;">
-      <div style="
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 30%;
-      background: linear-gradient(to top, rgba(253,246,242,1), rgba(253,246,242,0));
-    "></div>
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 30%;
+      background: linear-gradient(to top, rgba(253,246,242,1), rgba(253,246,242,0));"></div>
     </div>
   </section>
 
@@ -134,12 +135,24 @@
     <h2>Itinerario</h2>
     <table class="itinerary">
       <tr>
-        <td>⛪ <strong>Ceremonia:</strong></td>
-        <td>15:00 - 16:00 hrs en Parroquia Nuestra Señora de La Merced, zona 1</td>
+        <td><img src="icons/ceremonia.png" alt="Ceremonia"></td>
+        <td>
+          <strong>Ceremonia:</strong><br>
+          15:00 - 16:00 hrs en Parroquia Nuestra Señora de La Merced, zona 1<br>
+          <a href="https://maps.app.goo.gl/QWtsGPjxNYRFWsdh9" target="_blank">
+            <img src="icons/mapa.png" alt="Mapa" style="width: 16px;"> Ver mapa
+          </a>
+        </td>
       </tr>
       <tr>
-        <td>🍷 <strong>Recepción:</strong></td>
-        <td>18:00 - 23:00 hrs en Museo de La Merced, zona 1</td>
+        <td><img src="icons/recepcion.png" alt="Recepción"></td>
+        <td>
+          <strong>Recepción:</strong><br>
+          18:00 - 23:00 hrs en Museo de La Merced, zona 1<br>
+          <a href="https://maps.app.goo.gl/tBXbhaWggzE5FVZ37" target="_blank">
+            <img src="icons/mapa.png" alt="Mapa" style="width: 16px;"> Ver mapa
+          </a>
+        </td>
       </tr>
     </table>
   </section>
