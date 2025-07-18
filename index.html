@@ -133,13 +133,18 @@
 
     /* Responsive para móvil */
     @media screen and (max-width: 600px) {
+      .countdown-overlay {
+        padding: 10px !important;
+      }
+
       .faltan-text {
-        font-size: 1.8em !important;
+        font-size: 1.6em !important;
+        margin-bottom: 8px;
       }
 
       #countdown {
-        gap: 15px !important;
-        font-size: 1.4em !important;
+        font-size: 1.2em !important;
+        gap: 10px !important;
       }
 
       #countdown div div:last-child {
@@ -161,45 +166,46 @@
   </header>
 
   <!-- Imagen decorativa inferior con contador encima -->
-  <section style="position: relative; margin: 0; padding: 0;">
-    <img src="galeria/decoracion-bottom.jpg" alt="Decoración inferior" style="width: 100%; display: block;">
-
-    <div class="countdown-overlay" style="
+  <section style="position: relative; margin: 0; padding: 0; height: auto;">
+    <div style="position: relative; width: 100%; height: auto;">
+      <img src="galeria/decoracion-bottom.jpg" alt="Decoración inferior"
+        style="width: 100%; height: auto; display: block;">
+      <div class="countdown-overlay" style="
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
       box-sizing: border-box;
     ">
-      <div class="faltan-text" style="font-family: 'Great Vibes'; font-size: 2.5em; margin-bottom: 10px;">Faltan...
-      </div>
-      <div id="countdown" style="
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        flex-wrap: wrap;
-        font-family: 'Century Gothic';
-        font-size: 2em;
-      ">
-        <div style="text-align: center;">
-          <div id="days">--</div>
-          <div style="font-size: 0.5em;">días</div>
+        <div class="faltan-text" style="font-family: 'Great Vibes', cursive; font-size: 2.5em; margin-bottom: 10px;">
+          Faltan...
         </div>
-        <div style="text-align: center;">
-          <div id="hours">--</div>
-          <div style="font-size: 0.5em;">horas</div>
-        </div>
-        <div style="text-align: center;">
-          <div id="minutes">--</div>
-          <div style="font-size: 0.5em;">min</div>
-        </div>
-        <div style="text-align: center;">
-          <div id="seconds">--</div>
-          <div style="font-size: 0.5em;">seg</div>
+        <div id="countdown"
+          style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; font-family: 'Century Gothic'; font-size: 2em;">
+          <div style="text-align: center;">
+            <div id="days">--</div>
+            <div style="font-size: 0.5em;">días</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="hours">--</div>
+            <div style="font-size: 0.5em;">horas</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="minutes">--</div>
+            <div style="font-size: 0.5em;">min</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="seconds">--</div>
+            <div style="font-size: 0.5em;">seg</div>
+          </div>
         </div>
       </div>
     </div>
