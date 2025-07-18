@@ -25,20 +25,22 @@
       background-image: url('galeria/portada.jpg');
       background-size: cover;
       background-position: center;
-      height: 95vh;
+      height: 100vh;
       color: white;
-      text-shadow: 1px 1px 3px #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
+      position: relative;
     }
-
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4em;
-      margin: 0;
+    .countdown-overlay {
+      position: absolute;
+      bottom: 80px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-family: 'Century Gothic';
+      font-size: 2em;
+      gap: 25px;
+      color: white;
+      text-shadow: 1px 1px 2px #000;
     }
 
     section.content {
@@ -108,7 +110,7 @@
 <body>
 
   <header>
-    <div class="countdown" id="countdown">
+    <div class="countdown-overlay" id="countdown">
       <div><span id="days">--</span><br>días</div>
       <div><span id="hours">--</span><br>horas</div>
       <div><span id="minutes">--</span><br>min</div>
@@ -208,7 +210,7 @@
 
       <!-- Item 2: Supervisión niños -->
       <div style="display: flex; flex-direction: column; align-items: center; max-width: 300px; text-align: center;">
-        <img src="icons/ninos.png" alt="Supervisión de niños" style="width: 60px; height: 60px; margin-bottom: 10px;">
+        <img src="icons/familia.png" alt="Supervisión de niños" style="width: 60px; height: 60px; margin-bottom: 10px;">
         <p style="font-family: 'Century Gothic';">
           Amamos a sus pequeños, pero les pedimos que los mantengan supervisados en todo momento. ❤️
         </p>
