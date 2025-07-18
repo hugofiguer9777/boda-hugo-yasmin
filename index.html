@@ -134,12 +134,16 @@
     /* Responsive para móvil */
     @media screen and (max-width: 600px) {
       .faltan-text {
-        font-size: 1.8em;
+        font-size: 2em !important;
       }
 
       .countdown-numbers {
-        gap: 12px;
-        font-size: 1.3em;
+        gap: 20px !important;
+        font-size: 1.4em !important;
+      }
+
+      .countdown-numbers div div:last-child {
+        font-size: 0.6em !important;
       }
     }
   </style>
@@ -156,27 +160,34 @@
     </div> -->
   </header>
 
-  <section style="position: relative; padding: 0; margin: 0;">
+  <!-- Imagen decorativa inferior -->
+  <section style="margin: 0; padding: 0;">
     <img src="galeria/decoracion-bottom.jpg" alt="Decoración inferior" style="width: 100%; display: block;">
-    <div class="countdown-container">
-      <div class="faltan-text">Faltan...</div>
-      <div class="countdown-numbers" id="countdown">
-        <div>
-          <div id="days">--</div>
-          <div>días</div>
-        </div>
-        <div>
-          <div id="hours">--</div>
-          <div>horas</div>
-        </div>
-        <div>
-          <div id="minutes">--</div>
-          <div>min</div>
-        </div>
-        <div>
-          <div id="seconds">--</div>
-          <div>seg</div>
-        </div>
+  </section>
+
+  <!-- Sección del contador con fondo a juego -->
+  <section
+    style="background-color: #001b5e; color: white; padding: 40px 20px 60px 20px; text-align: center; position: relative;">
+    <div class="faltan-text" style="font-family: 'Great Vibes', cursive; font-size: 2.8em; margin-bottom: 20px;">
+      Faltan...
+    </div>
+    <div class="countdown-numbers" id="countdown"
+      style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: 'Century Gothic'; font-size: 2.2em;">
+      <div>
+        <div id="days">--</div>
+        <div style="font-size: 0.5em;">días</div>
+      </div>
+      <div>
+        <div id="hours">--</div>
+        <div style="font-size: 0.5em;">horas</div>
+      </div>
+      <div>
+        <div id="minutes">--</div>
+        <div style="font-size: 0.5em;">min</div>
+      </div>
+      <div>
+        <div id="seconds">--</div>
+        <div style="font-size: 0.5em;">seg</div>
       </div>
     </div>
   </section>
