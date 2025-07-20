@@ -108,24 +108,23 @@
 
     .seccion-contador {
       background-color: #0b1957;
-      /* o el azul que usas como fondo principal */
-      padding: 50px 20px;
+      padding: 40px 20px 30px;
       text-align: center;
       color: white;
     }
 
     .faltan-texto {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      font-size: 2.2em;
+      margin-bottom: 10px;
       text-shadow: 1px 1px 2px #000;
     }
 
     .bloque-contador {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      font-size: 2em;
+      gap: 20px;
+      font-size: 1.8em;
       font-family: 'Century Gothic', sans-serif;
       flex-wrap: wrap;
       text-shadow: 1px 1px 2px #000;
@@ -133,22 +132,25 @@
 
     .bloque-contador span {
       display: block;
-      font-size: 1.6em;
+      font-size: 1.5em;
+      line-height: 1;
     }
 
     .bloque-contador small {
-      font-size: 0.9em;
+      font-size: 0.8em;
+      display: block;
+      margin-top: 2px;
     }
 
-    /* Responsive para móviles */
+    /* Responsive */
     @media screen and (max-width: 600px) {
       .faltan-texto {
-        font-size: 2em;
+        font-size: 1.9em;
       }
 
       .bloque-contador {
-        font-size: 1.5em;
-        gap: 20px;
+        font-size: 1.3em;
+        gap: 15px;
       }
 
       .bloque-contador span {
@@ -156,7 +158,7 @@
       }
 
       .bloque-contador small {
-        font-size: 0.8em;
+        font-size: 0.75em;
       }
     }
   </style>
@@ -193,13 +195,14 @@
     <div class="contenedor-contador">
       <div class="faltan-texto">Faltan...</div>
       <div class="bloque-contador">
-        <div><span id="days">--</span><br><small>días</small></div>
-        <div><span id="hours">--</span><br><small>horas</small></div>
-        <div><span id="minutes">--</span><br><small>min</small></div>
-        <div><span id="seconds">--</span><br><small>seg</small></div>
+        <div><span id="days">--</span><small>días</small></div>
+        <div><span id="hours">--</span><small>horas</small></div>
+        <div><span id="minutes">--</span><small>min</small></div>
+        <div><span id="seconds">--</span><small>seg</small></div>
       </div>
     </div>
   </section>
+
 
   <!-- Separador ancho completo con fade -->
   <section style="padding: 0; margin: 0;">
