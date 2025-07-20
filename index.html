@@ -106,63 +106,57 @@
       font-family: 'Century Gothic', sans-serif;
     }
 
-    .countdown-overlay-fixed {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .seccion-contador {
+      background-color: #0b1957;
+      /* o el azul que usas como fondo principal */
+      padding: 50px 20px;
       text-align: center;
       color: white;
-      font-family: 'Century Gothic', sans-serif;
-      width: 100%;
-      padding: 0 20px;
-      box-sizing: border-box;
     }
 
-    .faltan-text {
+    .faltan-texto {
       font-family: 'Great Vibes', cursive;
       font-size: 2.5em;
-      margin-bottom: 10px;
-      color: white;
+      margin-bottom: 20px;
       text-shadow: 1px 1px 2px #000;
     }
 
-    .countdown-numbers {
+    .bloque-contador {
       display: flex;
       justify-content: center;
-      gap: 25px;
+      gap: 30px;
       font-size: 2em;
+      font-family: 'Century Gothic', sans-serif;
       flex-wrap: wrap;
-      color: white;
       text-shadow: 1px 1px 2px #000;
     }
 
-    .countdown-numbers span {
+    .bloque-contador span {
       display: block;
-      font-size: 1.5em;
+      font-size: 1.6em;
     }
 
-    .countdown-numbers small {
-      font-size: 0.8em;
+    .bloque-contador small {
+      font-size: 0.9em;
     }
 
-    /* Responsivo para móvil */
+    /* Responsive para móviles */
     @media screen and (max-width: 600px) {
-      .faltan-text {
-        font-size: 1.8em;
+      .faltan-texto {
+        font-size: 2em;
       }
 
-      .countdown-numbers {
-        gap: 15px;
+      .bloque-contador {
+        font-size: 1.5em;
+        gap: 20px;
+      }
+
+      .bloque-contador span {
         font-size: 1.3em;
       }
 
-      .countdown-numbers span {
-        font-size: 1.2em;
-      }
-
-      .countdown-numbers small {
-        font-size: 0.7em;
+      .bloque-contador small {
+        font-size: 0.8em;
       }
     }
   </style>
@@ -180,10 +174,10 @@
   </header>
 
   <!-- Imagen decorativa inferior con contador encima -->
-  <section style="position: relative; padding: 0; margin: 0; height: auto;">
+  <!-- <section style="position: relative; padding: 0; margin: 0; height: auto;">
     <div style="position: relative; width: 100%;">
       <img src="galeria/decoracion-bottom.jpg" alt="Decoración inferior" style="width: 100%; display: block;">
-      <div class="countdown-overlay-fixed">
+      <div class="countdown-overlay">
         <div class="faltan-text">Faltan...</div>
         <div class="countdown-numbers">
           <div><span id="days">--</span><br><small>días</small></div>
@@ -193,8 +187,19 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
+  <section class="seccion-contador">
+    <div class="contenedor-contador">
+      <div class="faltan-texto">Faltan...</div>
+      <div class="bloque-contador">
+        <div><span id="days">--</span><br><small>días</small></div>
+        <div><span id="hours">--</span><br><small>horas</small></div>
+        <div><span id="minutes">--</span><br><small>min</small></div>
+        <div><span id="seconds">--</span><br><small>seg</small></div>
+      </div>
+    </div>
+  </section>
 
   <!-- Separador ancho completo con fade -->
   <section style="padding: 0; margin: 0;">
