@@ -146,46 +146,26 @@
     }
 
     .carousel-container {
-      position: relative;
-      overflow: hidden;
-      max-width: 90%;
-      margin: auto;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
 
     .carousel {
       display: flex;
-      transition: transform 0.4s ease-in-out;
       gap: 10px;
+      scroll-snap-align: start;
+      padding: 10px 0;
+      width: max-content;
     }
 
     .carousel img {
-      min-width: 100%;
+      width: 250px;
+      height: auto;
       border-radius: 10px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      object-fit: cover;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.8);
-      border: none;
-      font-size: 2em;
-      padding: 5px 15px;
-      cursor: pointer;
-      z-index: 1;
-      color: #a30023;
-      border-radius: 50%;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .carousel-btn.left {
-      left: 10px;
-    }
-
-    .carousel-btn.right {
-      right: 10px;
     }
 
     /* Responsive para móviles */
@@ -208,12 +188,7 @@
       }
 
       .carousel img {
-        min-width: 100%;
-      }
-
-      .carousel-btn {
-        font-size: 1.5em;
-        padding: 4px 12px;
+        width: 80vw;
       }
     }
   </style>
@@ -379,14 +354,12 @@
   <section class="content">
     <h2>Galería de fotos</h2>
     <div class="carousel-container">
-      <button class="carousel-btn left" onclick="moveSlide(-1)">‹</button>
-      <div class="carousel" id="carousel">
+      <div class="carousel" id="photo-carousel">
         <img src="galeria/foto1.jpeg" alt="Foto 1">
         <img src="galeria/foto2.jpeg" alt="Foto 2">
         <img src="galeria/foto3.jpeg" alt="Foto 3">
         <img src="galeria/foto4.jpeg" alt="Foto 4">
       </div>
-      <button class="carousel-btn right" onclick="moveSlide(1)">›</button>
     </div>
   </section>
 
