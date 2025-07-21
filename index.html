@@ -145,6 +145,49 @@
       margin-top: 1px;
     }
 
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 90%;
+      margin: auto;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      gap: 10px;
+    }
+
+    .carousel img {
+      min-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 2em;
+      padding: 5px 15px;
+      cursor: pointer;
+      z-index: 1;
+      color: #a30023;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-btn.left {
+      left: 10px;
+    }
+
+    .carousel-btn.right {
+      right: 10px;
+    }
+
     /* Responsive para móviles */
     @media screen and (max-width: 600px) {
       .faltan-texto {
@@ -162,6 +205,15 @@
 
       .bloque-contador small {
         font-size: 0.7em;
+      }
+
+      .carousel img {
+        min-width: 100%;
+      }
+
+      .carousel-btn {
+        font-size: 1.5em;
+        padding: 4px 12px;
       }
     }
   </style>
@@ -326,13 +378,18 @@
 
   <section class="content">
     <h2>Galería de fotos</h2>
-    <div class="gallery">
-      <img src="galeria/foto1.jpeg" alt="Foto 1">
-      <img src="galeria/foto2.jpeg" alt="Foto 2">
-      <img src="galeria/foto3.jpeg" alt="Foto 3">
-      <img src="galeria/foto4.jpeg" alt="Foto 4">
+    <div class="carousel-container">
+      <button class="carousel-btn left" onclick="moveSlide(-1)">‹</button>
+      <div class="carousel" id="carousel">
+        <img src="galeria/foto1.jpeg" alt="Foto 1">
+        <img src="galeria/foto2.jpeg" alt="Foto 2">
+        <img src="galeria/foto3.jpeg" alt="Foto 3">
+        <img src="galeria/foto4.jpeg" alt="Foto 4">
+      </div>
+      <button class="carousel-btn right" onclick="moveSlide(1)">›</button>
     </div>
   </section>
+
 
   <script>
     const targetDate = new Date("2026-05-09T15:00:00").getTime();
@@ -344,6 +401,16 @@
       document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
+
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const totalSlides = carousel.children.length;
+
+    function moveSlide(direction) {
+      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+      const offset = -currentIndex * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
   </script>
 
 </body>
