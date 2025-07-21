@@ -108,57 +108,62 @@
 
     .seccion-contador {
       background-color: #030b60;
-      padding: 40px 20px 30px;
+      padding: 35px 20px 25px;
       text-align: center;
       color: white;
     }
 
     .faltan-texto {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.2em;
-      margin-bottom: 10px;
+      font-size: 2.7em;
+      /* aumentado */
+      margin-bottom: 5px;
+      /* más pegado al contador */
       text-shadow: 1px 1px 2px #000;
     }
 
     .bloque-contador {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      font-size: 1.8em;
+      gap: 18px;
+      /* más compacto horizontal */
+      font-size: 1.6em;
+      /* tamaño base */
       font-family: 'Century Gothic', sans-serif;
       flex-wrap: wrap;
       text-shadow: 1px 1px 2px #000;
+      margin-top: 5px;
+      /* reduce separación */
     }
 
     .bloque-contador span {
       display: block;
-      font-size: 1.5em;
-      line-height: 1;
+      font-size: 1.4em;
+      line-height: 1.1;
     }
 
     .bloque-contador small {
-      font-size: 0.8em;
-      display: block;
-      margin-top: 2px;
+      font-size: 0.75em;
+      margin-top: 1px;
     }
 
-    /* Responsive */
+    /* Responsive para móviles */
     @media screen and (max-width: 600px) {
       .faltan-texto {
-        font-size: 1.9em;
+        font-size: 2.4em;
       }
 
       .bloque-contador {
-        font-size: 1.3em;
-        gap: 15px;
+        font-size: 1.25em;
+        gap: 12px;
       }
 
       .bloque-contador span {
-        font-size: 1.3em;
+        font-size: 1.2em;
       }
 
       .bloque-contador small {
-        font-size: 0.75em;
+        font-size: 0.7em;
       }
     }
   </style>
