@@ -166,6 +166,12 @@
       flex-shrink: 0;
       scroll-snap-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.03);
     }
 
     /* Responsive para móviles */
@@ -190,6 +196,43 @@
       .carousel img {
         width: 80vw;
       }
+    }
+
+    /* Estilos del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .modal-close:hover {
+      color: #f1f1f1;
     }
   </style>
 </head>
@@ -354,14 +397,20 @@
   <section class="content">
     <h2>Galería de fotos</h2>
     <div class="carousel-container">
-      <div class="carousel" id="photo-carousel">
-        <img src="galeria/foto1.jpeg" alt="Foto 1">
-        <img src="galeria/foto2.jpeg" alt="Foto 2">
-        <img src="galeria/foto3.jpeg" alt="Foto 3">
-        <img src="galeria/foto4.jpeg" alt="Foto 4">
+      <div class="carousel">
+        <img src="galeria/foto1.jpeg" alt="Foto 1" onclick="openModal(this)">
+        <img src="galeria/foto2.jpeg" alt="Foto 2" onclick="openModal(this)">
+        <img src="galeria/foto3.jpeg" alt="Foto 3" onclick="openModal(this)">
+        <img src="galeria/foto4.jpeg" alt="Foto 4" onclick="openModal(this)">
       </div>
     </div>
   </section>
+
+  <!-- Modal de imagen -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
 
   <script>
@@ -375,14 +424,15 @@
       document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
 
-    let currentIndex = 0;
-    const carousel = document.getElementById('carousel');
-    const totalSlides = carousel.children.length;
+    function openModal(img) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
 
-    function moveSlide(direction) {
-      currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-      const offset = -currentIndex * 100;
-      carousel.style.transform = `translateX(${offset}%)`;
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
     }
   </script>
 
