@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Century Gothic';
-  src: url('fonts/weezerfont.ttf') format('truetype');
+  src: url('../fonts/weezerfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background-image: url('galeria/portada.jpg');
+  background-image: url('../galeria/portada.jpg');
   background-size: cover;
   background-position: center top;
   height: 80vh;
