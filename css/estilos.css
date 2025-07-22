@@ -102,7 +102,7 @@ p {
   height: 20%; /* Puedes ajustar este valor a tu gusto: 40px, 60px, etc. */
   object-fit: fill;
   display: block;
-  margin: 5px 0;
+  margin: 0px 0;
 }
 
 .seccion-contador {
