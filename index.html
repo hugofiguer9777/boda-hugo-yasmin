@@ -208,7 +208,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
+      overflow: hidden;
       background-color: rgba(0, 0, 0, 0.9);
     }
 
@@ -231,7 +231,31 @@
       z-index: 10000;
     }
 
-    .modal-close:hover {
+    .modal-prev,
+    .modal-next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 40px;
+      transition: 0.3s;
+      user-select: none;
+      z-index: 10000;
+    }
+
+    .modal-prev {
+      left: 0;
+    }
+
+    .modal-next {
+      right: 0;
+    }
+
+    .modal-prev:hover,
+    .modal-next:hover {
       color: #f1f1f1;
     }
   </style>
@@ -398,18 +422,20 @@
     <h2>Galería de fotos</h2>
     <div class="carousel-container">
       <div class="carousel">
-        <img src="galeria/foto1.jpeg" alt="Foto 1" onclick="openModal(this)">
-        <img src="galeria/foto2.jpeg" alt="Foto 2" onclick="openModal(this)">
-        <img src="galeria/foto3.jpeg" alt="Foto 3" onclick="openModal(this)">
-        <img src="galeria/foto4.jpeg" alt="Foto 4" onclick="openModal(this)">
+        <img src="galeria/foto1.jpeg" alt="Foto 1" onclick="openModal(0)">
+        <img src="galeria/foto2.jpeg" alt="Foto 2" onclick="openModal(1)">
+        <img src="galeria/foto3.jpeg" alt="Foto 3" onclick="openModal(2)">
+        <img src="galeria/foto4.jpeg" alt="Foto 4" onclick="openModal(3)">
       </div>
     </div>
   </section>
 
-  <!-- Modal de imagen -->
-  <div id="imageModal" class="modal" onclick="closeModal()">
+  <!-- Modal de imagen con navegación -->
+  <div id="imageModal" class="modal">
     <span class="modal-close" onclick="closeModal()">&times;</span>
+    <span class="modal-prev" onclick="changeImage(-1)">&#10094;</span>
     <img class="modal-content" id="modalImage">
+    <span class="modal-next" onclick="changeImage(1)">&#10095;</span>
   </div>
 
 
@@ -424,16 +450,36 @@
       document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
 
-    function openModal(img) {
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImage");
-      modal.style.display = "block";
-      modalImg.src = img.src;
+    const imageSources = [
+      'galeria/foto1.jpeg',
+      'galeria/foto2.jpeg',
+      'galeria/foto3.jpeg',
+      'galeria/foto4.jpeg'
+    ];
+
+    let currentImageIndex = 0;
+
+    function openModal(index) {
+      currentImageIndex = index;
+      document.getElementById("imageModal").style.display = "block";
+      document.getElementById("modalImage").src = imageSources[currentImageIndex];
     }
 
     function closeModal() {
       document.getElementById("imageModal").style.display = "none";
     }
+
+    function changeImage(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex < 0) currentImageIndex = imageSources.length - 1;
+      if (currentImageIndex >= imageSources.length) currentImageIndex = 0;
+      document.getElementById("modalImage").src = imageSources[currentImageIndex];
+    }
+
+    // Cerrar con tecla ESC
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
   </script>
 
 </body>
