@@ -99,8 +99,7 @@ p {
 
 .section-separator img {
   width: 100%;
-  height: 20%;
-  /* Puedes ajustar este valor a tu gusto: 40px, 60px, etc. */
+  height: 200px; /* Puedes ajustar este valor a tu gusto: 40px, 60px, etc. */
   object-fit: fill;
   display: block;
   margin: 10px 0;
