@@ -259,9 +259,6 @@ p {
   clear: both;
 }
 
-/* RESPONSIVO: UN SOLO LADO EN MÓVIL */
-@media screen and (max-width: 600px) {}
-
 
 /* Responsive para móviles */
 @media screen and (max-width: 600px) {
