@@ -175,6 +175,94 @@ p {
   transform: scale(1.03);
 }
 
+/* CONTENEDOR DE LA LÍNEA DE TIEMPO */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+  margin: 0 auto;
+  max-width: 800px;
+  /* ajusta al ancho de tu sección */
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #ccc;
+}
+
+/* CADA ÍTEM DE LA LÍNEA DE TIEMPO */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  clear: both;
+  margin-bottom: 30px;
+}
+
+/* ÍTEMS IMPARES A LA IZQUIERDA, PARES A LA DERECHA */
+.timeline-item:nth-child(odd) {
+  float: left;
+}
+
+.timeline-item:nth-child(even) {
+  float: right;
+}
+
+/* ICONO CENTRADO SOBRE LA LÍNEA */
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 2px solid #af3e2b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* CAJA DE CONTENIDO */
+.timeline-content {
+  background: #faf8f6;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* DESPLAZAMIENTO DE LA CAJA SEGÚN LADO */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 90px;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 90px;
+  text-align: left;
+}
+
+/* LIMPIA LOS FLOATS */
+.timeline:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* RESPONSIVO: UN SOLO LADO EN MÓVIL */
+@media screen and (max-width: 600px) {}
+
+
 /* Responsive para móviles */
 @media screen and (max-width: 600px) {
   .faltan-texto {
@@ -196,6 +284,30 @@ p {
 
   .carousel img {
     width: 80vw;
+  }
+
+  .timeline {
+    padding: 20px 0;
+  }
+
+  .timeline-item {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  .timeline-item .timeline-content {
+    margin: 10px 0 0 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-icon {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline::before {
+    left: 20px;
   }
 }
 
