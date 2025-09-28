@@ -164,13 +164,13 @@ p {
 .timeline.alt .timeline-item {
   position: relative;
   display: flex;
-  justify-content: flex-end; /* por defecto lado izquierdo */
+  justify-content: flex-start; /* por defecto lado izquierdo: ODD a la IZQUIERDA */
   margin: 40px 0;
 }
 
 /* Alternar lados */
 .timeline.alt .timeline-item:nth-child(even) {
-  justify-content: flex-start; /* lado derecho */
+  justify-content: flex-end; /* lado derecho: EVEN a la DERECHA */
 }
 
 /* Punto central y conector */
