@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Century Gothic';
   src: url('../fonts/weezerfont.ttf') format('truetype');
@@ -315,4 +314,47 @@ p {
 
   /* Carrusel */
   .carousel img { width: 80vw; }
+}
+
+/* ===== Mobile refinements: single column on the LEFT, compact spacing ===== */
+@media (max-width: 640px) {
+  .timeline.alt { padding: 6px 0; }
+
+  /* Línea al lado izquierdo */
+  .timeline.alt::before { left: 24px !important; right: auto; transform: none; }
+
+  /* Cada item forzado a la izquierda y más compacto */
+  .timeline.alt .timeline-item {
+    justify-content: flex-start !important;
+    margin: 16px 0;
+  }
+
+  /* Punto y conector alineados a la izquierda */
+  .timeline.alt .timeline-dot {
+    left: 24px !important;
+    width: 12px; height: 12px;
+    border-width: 2px;
+  }
+  .timeline.alt .timeline-connector {
+    left: 24px !important;
+    right: auto;
+    width: 26px;
+  }
+  .timeline.alt .timeline-item:nth-child(odd) .timeline-connector,
+  .timeline.alt .timeline-item:nth-child(even) .timeline-connector {
+    left: 24px !important; right: auto;
+  }
+
+  /* Tarjeta ocupa el ancho, respetando la línea y conector */
+  .timeline.alt .timeline-content {
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 0;
+    padding: 14px 16px;
+  }
+
+  /* Tipografías un poquito más pequeñas para que respire */
+  .timeline.alt .timeline-title img { width: 24px; height: 24px; }
+  .timeline.alt .timeline-content h3 { font-size: 1.35rem; }
+  .timeline.alt .timeline-content p  { font-size: 0.98rem; }
 }
